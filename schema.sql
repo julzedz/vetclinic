@@ -8,3 +8,20 @@ CREATE TABLE animals (
     neutered BOOLEAN,
     weight_kg DECIMAL
 );
+
+
+CREATE TABLE owners(
+id INT NOT NULL GENERATED ALWAYS AS IDENTITY,
+full_name VARCHAR(100),
+age INT,
+PRIMARY KEY(id)
+);
+CREATE TABLE species(
+id INT NOT NULL GENERATED ALWAYS AS IDENTITY,
+name VARCHAR(100),
+PRIMARY KEY(id)
+);
+
+ALTER TABLE animals DROP COLUMN species;
+ALTER TABLE animals ADD COLUMN species_id INTEGER REFERENCES species(id);
+ALTER TABLE animals ADD COLUMN owner_id INT REFERENCES owners(id);
