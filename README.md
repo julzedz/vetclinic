@@ -90,7 +90,7 @@ If you like this project, please give it a star and also follow me on GitHub for
 
   <!-- LICENSE -->
 ## 📝 License <a name="license"></a>
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
   
 ## 📝 FAQs <a name="faq"></a>
 Drop your questions in the issue section.  
