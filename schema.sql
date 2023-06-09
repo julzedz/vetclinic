@@ -9,6 +9,7 @@ CREATE TABLE animals (
     weight_kg DECIMAL
 );
 
+ALTER TABLE animals ADD species VARCHAR(255);
 
 CREATE TABLE owners(
 id INT NOT NULL GENERATED ALWAYS AS IDENTITY,
