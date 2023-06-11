@@ -26,3 +26,9 @@ PRIMARY KEY(id)
 ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE animals ADD COLUMN species_id INTEGER REFERENCES species(id);
 ALTER TABLE animals ADD COLUMN owner_id INT REFERENCES owners(id);
+
+CREATE TABLE vets ( id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, name VARCHAR, age INT, date_of_graduation DATE, PRIMARY KEY(id));
+
+CREATE TABLE specializations ( species_id INTEGER REFERENCES species(id), vet_id INTEGER REFERENCES vets(id) );
+
+CREATE TABLE visits ( animal_id INTEGER REFERENCES animals(id), vet_id INTEGER REFERENCES vets(id), date_of_visit DATE );
