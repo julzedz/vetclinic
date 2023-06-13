@@ -60,3 +60,8 @@ SELECT * FROM visits INNER JOIN animals ON visits.animal_id = animals.id INNER J
 SELECT vets.name AS "Vet Name", COUNT(*) FROM visits FULL OUTER JOIN vets ON visits.vet_id = vets.id FULL OUTER JOIN specializations ON specializations.vet_id = vets.id FULL OUTER JOIN species ON specializations.species_id = species.id WHERE specializations.species_id IS NULL OR specializations.species_id != species.id GROUP BY vets.name;
 
 SELECT vets.name AS "Vet Name", species.name AS "Species", COUNT(*) FROM visits INNER JOIN vets ON visits.vet_id = vets.id INNER JOIN animals ON visits.animal_id = animals.id INNER JOIN species ON animals.species_id = species.id WHERE vets.name = 'Maisy Smith' GROUP BY vets.name,species.name LIMIT 1;
+
+EXPLAIN ANALYSE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYSE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYSE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
