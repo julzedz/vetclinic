@@ -35,3 +35,7 @@ CREATE TABLE visits ( animal_id INTEGER REFERENCES animals(id), vet_id INTEGER R
 
 -- Add an email column to your owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX animals_id_idx ON visits (animal_id ASC);
+CREATE INDEX email_id_idx ON owners (email ASC);
+CREATE INDEX vets_id_idx ON visits (vet_id);
